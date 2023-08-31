@@ -1,11 +1,14 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
+import ExperienceSection from './components/ExperienceSection.vue';
+
 
 export default {
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    ExperienceSection,
   },
   data() {
     return {}
@@ -16,8 +19,17 @@ export default {
 
 
 <template>
-  <TheHeader></TheHeader>
-  <TheFooter></TheFooter>
+  <header>
+    <TheHeader></TheHeader>
+  </header>
+
+  <main>
+    <ExperienceSection></ExperienceSection>
+  </main>
+
+  <footer>
+    <TheFooter></TheFooter>
+  </footer>
 </template>
 
 

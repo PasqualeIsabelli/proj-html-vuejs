@@ -6,7 +6,9 @@ export default {
     TheNavbar
   },
   data() {
-    return {}
+    return {
+      socialItems: ['fa-brands fa-facebook', 'fa-brands fa-twitter', 'fa-brands fa-linkedin', 'fa-brands fa-instagram'],
+    }
   }
 }
 </script>
@@ -41,25 +43,10 @@ export default {
       </div>
     </div>
     <div class="jumbo-item">
-      <ul class="d-flex d-flex flex-column gap-4">
-        <li>
-          <a href="#0" class="social">
-            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#0" class="social">
-            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#0" class="social">
-            <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
-          </a>
-        </li>
-        <li>
-          <a href="#0" class="social">
-            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+      <ul>
+        <li class="d-flex flex-column gap-4">
+          <a href="#0" class="social" v-for="social in socialItems">
+            <i :class="social" style="color: #ffffff;"></i>
           </a>
         </li>
       </ul>

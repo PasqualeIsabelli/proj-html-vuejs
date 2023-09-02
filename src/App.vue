@@ -4,7 +4,10 @@ import TheFooter from './components/TheFooter.vue';
 import ExperienceSection from './components/ExperienceSection.vue';
 import FeatureSection from './components/FeatureSection.vue';
 import StreamingSection from './components/StreamingSection.vue';
+import TestimonialsSection from './components/TestimonialsSection.vue';
+import ShopSection from './components/ShopSection.vue';
 import LatestSection from './components/LatestSection.vue';
+
 
 
 export default {
@@ -14,6 +17,8 @@ export default {
     ExperienceSection,
     FeatureSection,
     StreamingSection,
+    TestimonialsSection,
+    ShopSection,
     LatestSection
   },
   data() {
@@ -33,6 +38,8 @@ export default {
     <ExperienceSection></ExperienceSection>
     <FeatureSection></FeatureSection>
     <StreamingSection></StreamingSection>
+    <TestimonialsSection></TestimonialsSection>
+    <ShopSection></ShopSection>
     <LatestSection></LatestSection>
   </main>
 

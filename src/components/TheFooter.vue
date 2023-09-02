@@ -3,17 +3,7 @@ export default {
   data() {
     return {
       footerItems: ['HOME', 'PAGES', 'TOURNAMENT', 'SHOP', 'BLOG', 'CONTACT'],
-      // socialItems: [
-      //   {
-      //     social: `<i class="fa-brands fa-facebook" style="color: #ffffff;"></i>`
-      //   }, {
-      //     social: `<i class="fa-brands fa-twitter" style="color: #ffffff;"></i>`
-      //   }, {
-      //     social: `<i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>`
-      //   }, {
-      //     social: `<i class="fa-brands fa-instagram" style="color: #ffffff;"></i>`
-      //   }
-      // ]      
+      socialItems: ['fa-brands fa-facebook', 'fa-brands fa-twitter', 'fa-brands fa-linkedin', 'fa-brands fa-instagram']      
     }
   }
 }
@@ -42,25 +32,10 @@ export default {
           </p>
         </div>
         <div class="col">
-          <ul class="d-flex justify-content-end gap-4">
-            <li>
-              <a href="#0" class="social">
-                <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#0" class="social">
-                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#0" class="social">
-                <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#0" class="social">
-                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+          <ul class="d-flex justify-content-end">
+            <li class="d-flex gap-4">
+              <a href="#0" class="social" v-for="social in socialItems">
+                <i :class="social" style="color: #ffffff;"></i>
               </a>
             </li>
           </ul>          

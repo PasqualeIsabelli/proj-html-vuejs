@@ -1,10 +1,7 @@
 <script>
-import { store } from '../store';
-
 export default {
   data() {
     return {
-      store,
       slides: [
         {
           image: '../assets/img/b1.png',
@@ -23,13 +20,13 @@ export default {
           alt: 'mtx',
           title: 'Mortal Combat X',
         }
-      ]
+      ],
     }
   },
   methods: {
     getImg(img) {
       return new URL(img, import.meta.url).href
-    }
+    },
   }
 }
 </script>
@@ -45,19 +42,9 @@ export default {
           <h2 class="title fw-bold text-white">Stay Updated With our Latest News Articles</h2>
         </div>
       </div>
-
       <div class="card-box mt-4">
-        <div class="d-inline-flex gap-3 btn-box">
-          <div style="height: 45px; width: 45px;" class="prev rounded-circle bg-white text-center">
-            <i class="fa-solid fa-arrow-left fs-5" style="color: #000000;"></i>
-          </div>
-          <div style="height: 45px; width: 45px;" class="next rounded-circle bg-success text-center">
-            <i class="fa-solid fa-arrow-right fs-5" style="color: #ffffff;"></i>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between">
-          
-          <div class="card pb-3" style="width: 18rem;" v-for="slide in slides">
+        <div class="d-flex gap-4">
+          <div class="card pb-3" v-for="slide in slides">
             <img :src="getImg(slide.image)" class="card-img-top" :alt="slide.alt">
             <div class="card-body d-flex flex-column">
               <a href="#0" class="text-decoration-none"><h5 class="card-title text-white text-center fw-bold fs-4 mt-2">{{ slide.title }}</h5></a>
@@ -67,12 +54,16 @@ export default {
               <a href="#" class="btn btn-success fw-bold py-3 px-4">Read More &#8594;</a>
             </div>
           </div>
-
+        </div>
+        <div class="d-inline-flex gap-3 btn-box pippo">
+          <div style="height: 45px; width: 45px;" class="prev rounded-circle bg-white text-center">
+            <i class="fa-solid fa-arrow-left fs-5" style="color: #000000;"></i>
+          </div>
+          <div style="height: 45px; width: 45px;" class="next rounded-circle bg-success text-center">
+            <i class="fa-solid fa-arrow-right fs-5" style="color: #ffffff;"></i>
+          </div>
         </div>
       </div>
-
-
-
       <div class="letter-box col-12 rounded-3">
         <div class="row">
           <div class="col-6">
@@ -151,9 +142,5 @@ section {
       }
     }
   }
-}
-
-.pippo {
-  border: 1px solid red;
 }
 </style>

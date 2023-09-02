@@ -18,16 +18,16 @@ export default {
     <nav>
       <TheNavbar></TheNavbar>
     </nav>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="../assets/img/banner1.png" alt="First slide">
+          <img class="d-block w-100" src="../assets/img/banner1.png">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../assets/img/bg1.png" alt="Second slide">
+          <img class="d-block w-100" src="../assets/img/bg1.png">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../assets/img/bg2.png" alt="Third slide">
+          <img class="d-block w-100" src="../assets/img/bg2.png">
         </div>
       </div>
     </div>
@@ -35,31 +35,34 @@ export default {
       <h4 class="text-center subtitle fw-bold">WELCOME TO RAXG</h4>
       <h1 class="text-white text-center title fw-bold">ARE YOU READY FOR YOUR NEXT CHALLENGE?</h1>
       <div class="text-center">
-        <button type="button" class="btn btn-success me-2 mt-3 px-4 py-3">Read More →</button>
-        <button type="button" class="btn btn-success rounded-circle ms-2 mt-3 px-3 py-2 asp-ratio"><i class="fa-solid fa-play fs-4" style="color: #000000;"></i></button>
+        <button type="button" class="btn btn-success me-2 mt-3 px-4 py-3 fw-bold">Read More &#8594;</button>
+        <button type="button" class="btn btn-success rounded-circle ms-2 mt-3 px-3 py-2 asp-ratio"><i
+            class="fa-solid fa-play fs-4" style="color: #000000;"></i></button>
       </div>
     </div>
-    <div class="jumbo-item d-flex flex-column gap-4">
-      <a href="#0">
-        <div class="social rounded-circle text-center px-2 py-1">
-          <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
-        </div>
-      </a>
-      <a href="#0">
-        <div class="social rounded-circle text-center px-2 py-1">
-          <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-        </div>
-      </a>
-      <a href="#0">  
-        <div class="social rounded-circle text-center px-2 py-1">
-          <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
-        </div>
-      </a>
-      <a href="#0">
-        <div class="social rounded-circle text-center px-2 py-1">
-          <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
-        </div>
-      </a>
+    <div class="jumbo-item">
+      <ul class="d-flex d-flex flex-column gap-4">
+        <li>
+          <a href="#0" class="social">
+            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#0" class="social">
+            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#0" class="social">
+            <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#0" class="social">
+            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -73,7 +76,7 @@ export default {
 header {
   position: relative;
   overflow: hidden;
-  
+
   nav {
     position: absolute;
     top: 0;
@@ -87,7 +90,6 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     .asp-ratio {
       aspect-ratio: 1/1;
     }
@@ -103,13 +105,20 @@ header {
     top: 50%;
     left: 150px;
     transform: translate(0, -50%);
-
     .social {
+      display: block;
+      text-transform: uppercase;
+      font-size: 14px;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
       background-color: $color-secondary;
-      aspect-ratio: 1/1;
-      
+      text-align: center;
+      transition: all 0.3s;
+
       &:hover {
-      background-color: $green-secondary;
+        background-color: $green-secondary;
       }
     }
   }
@@ -118,6 +127,8 @@ header {
     --bs-btn-border-color: #05cc7c !important;
     --bs-btn-hover-bg: transparent !important;
     --bs-btn-hover-border-color: #05cc7c !important;
+    --bs-btn-color: #000000 !important;
+    --bs-btn-hover-color: #05cc7c !important;
   }
 }
 </style>

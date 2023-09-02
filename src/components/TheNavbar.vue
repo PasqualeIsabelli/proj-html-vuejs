@@ -1,8 +1,9 @@
 <script>
-
 export default {
   data() {
-    return {}
+    return {
+      navItems: ['HOME', 'PAGES', 'TOURNAMENT', 'SHOP', 'BLOG', 'CONTACT']
+    }
   }
 }
 </script>
@@ -20,24 +21,8 @@ export default {
         </div>
         <div>
           <ul class="d-flex gap-4 list-inline">
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">HOME</li>
-            </a>
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">PAGES</li>
-            </a>
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">TOURNAMENT</li>
-            </a>
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">SHOP</li>
-            </a>
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">BLOG</li>
-            </a>
-            <a class="text-decoration-none" href="#0">
-              <li class="fw-bold text-white">CONTACT</li>
-            </a>
+            <li class="fw-bold" v-for="navItem in navItems"><a class="text-decoration-none" href="#0">{{ navItem }}</a>
+            </li>
           </ul>
         </div>
         <div class="d-flex justify-content-center align-items-center gap-2">
@@ -65,13 +50,16 @@ export default {
 
 .nav-bg {
   background-color: rgba(0, 0, 0, .4);
-  
+
   ul {
     line-height: 60px;
 
     a {
-      padding-top: 5px;
-      list-style: none;
+      color: $white;
+      
+      &:hover {
+        color: $green-secondary;
+      }
     }
   }
   .pr-xy {
@@ -79,5 +67,4 @@ export default {
     aspect-ratio: 1/1;
   }
 }
-
 </style>

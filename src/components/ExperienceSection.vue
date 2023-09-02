@@ -1,9 +1,39 @@
 <script>
-
-
 export default {
   data() {
-    return {}
+    return {
+      images: [ 
+      {
+        img: '../assets/img/1.png',
+        alt: 'ninja'
+      },
+      {
+        img: '../assets/img/2.png',
+        alt: 'ninja'
+      },
+      {
+        img: '../assets/img/3.png',
+        alt: 'ninja'
+      },
+      {
+        img: '../assets/img/4.png',
+        alt: 'ninja'
+      },
+      {
+        img: '../assets/img/5.png',
+        alt: 'ninja'
+      },
+      {
+        img: '../assets/img/6.png',
+        alt: 'ninja'
+      },
+      ]
+    }
+  },
+  methods: {
+    getImg(img) {
+      return new URL(img, import.meta.url).href
+    }
   }
 }
 </script>
@@ -14,42 +44,19 @@ export default {
   <section>
     <div class="section-content">
       <div class="img-box container rounded-3 d-flex justify-content-evenly gap-5 p-5">
-        <div class="image">
-          <img src="../assets/img/1.png" alt="ninja">
-        </div>
-        <div class="image">
-          <img src="../assets/img/2.png" alt="king">
-        </div>
-        <div class="image">
-          <img src="../assets/img/3.png" alt="skull">
-        </div>
-        <div class="image">
-          <img src="../assets/img/4.png" alt="panda">
-        </div>
-        <div class="image">
-          <img src="../assets/img/5.png" alt="witch">
-        </div>
-        <div class="image">
-          <img src="../assets/img/6.png" alt="astro">
+        <div class="image" v-for="image in images">
+          <img :src="getImg(image.img)" :alt="image.alt">
         </div>
       </div>
-      <div class="section-box col-8 m-auto">
+      <div class="section-box container m-auto">
         <div class="experience d-flex">
           <div class="experience-image-box">
-            <div class="experience-image">
-              
-            </div>
-            <div class="shape-big">
-              
-            </div>
-            <div class="shape-small">
-              
-            </div>
-            <div class="shape-grid">
-
-            </div>
+            <div class="experience-image"></div>
+            <div class="shape-big"></div>
+            <div class="shape-small"></div>
+            <div class="shape-grid"></div>
           </div>
-          <div class="experience-text">
+          <div class="section-text">
             <p class="text-green fw-bold fs-5">12 Year Experience</p>
             <h2 class="text-white title fw-bold">We Are The Best Gaming Company</h2>
             <p class="text-white mt-5">Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.Praesent sapien massa, convallis a pellentesque nec, egestas non nisi praesent sapien massa ligula sed magna dictum porta.
@@ -60,11 +67,13 @@ export default {
               <p class="text-white fw-bold"><span class="text-success border border-success rounded-circle asp-ratio px-1"><i class="fa-solid fa-check" style="color: #00ac4d;"></i></span> Praesent sapien massa, convallis a pellentesque nec. risus.</p>
               <p class="text-white fw-bold"><span class="text-success border border-success rounded-circle asp-ratio px-1"><i class="fa-solid fa-check" style="color: #00ac4d;"></i></span> Praesent sapien massa, convallis a pellentesque nec. risus.</p>
               <p class="text-white fw-bold"><span class="text-success border border-success rounded-circle asp-ratio px-1"><i class="fa-solid fa-check" style="color: #00ac4d;"></i></span> Praesent sapien massa, convallis a pellentesque nec. risus.</p>
+              <div>
+                <button type="button" class="btn btn-success me-2 mt-3 px-4 py-3 fw-bold">Discover More &#8594;</button>
+                <button type="button" class="btn btn-success rounded-circle ms-2 mt-3 px-3 py-2 asp-ratio"><i class="fa-solid fa-play fs-4" style="color: #000000;"></i></button>
+              </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </section>
 </template>
@@ -118,7 +127,7 @@ section {
           background-image: url(../assets/img/shape2.png);
           position: absolute;
           right: 10px;
-          bottom: 10px;
+          bottom: 40px;
         }
         .shape-grid{
           width: 120px;
@@ -137,6 +146,14 @@ section {
         }
         .asp-ratio {
           aspect-ratio: 1/1;
+        }
+        .btn-success {
+          --bs-btn-bg: #05cc7c !important;
+          --bs-btn-border-color: #05cc7c !important;
+          --bs-btn-hover-bg: transparent !important;
+          --bs-btn-hover-border-color: #05cc7c !important;
+          --bs-btn-color: #000000 !important;
+          --bs-btn-hover-color: #05cc7c !important;
         }
       }
     }

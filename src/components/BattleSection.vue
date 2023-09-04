@@ -247,6 +247,7 @@ section {
       background-color: $color-secondary;
       &:hover {
         background-color: $color-tertiary;
+        border: none;
         .timing {
           background-color: $green-primary;
         }

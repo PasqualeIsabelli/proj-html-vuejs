@@ -71,17 +71,19 @@ section {
   .left {
     background-image: url(../assets/img/test-grouptwo.png);
     background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
-    top: 300px;
+    bottom: 0;
     height: 100%;
     width: 50%;
   }
   .right{
     background-image: url(../assets/img/test-group.png);
     background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
-    right: -150px;
+    right: 0;
     height: 100%;
     width: 50%;
   }

@@ -51,7 +51,7 @@ export default {
               <br>
               <p class="card-text text-white text-center"><i class="fa-brands fa-youtube" style="color: #00ac4d;"></i> By Admin <span class="text-green">|</span> <i class="fa-solid fa-calendar-days" style="color: #00ac4d;"></i> Oct 25, 2022</p>
               <br>
-              <a href="#" class="btn btn-success fw-bold py-3 px-4">Read More &#8594;</a>
+              <a href="#0" class="btn btn-success fw-bold py-3 px-4">Read More &#8594;</a>
             </div>
           </div>
         </div>

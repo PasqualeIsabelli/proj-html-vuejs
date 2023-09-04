@@ -8,7 +8,13 @@ export default {
   data() {
     return {
       socialItems: ['fa-brands fa-facebook', 'fa-brands fa-twitter', 'fa-brands fa-linkedin', 'fa-brands fa-instagram'],
+      jumboSlides: ['../assets/img/banner1.png', '../assets/img/bg1.png', '../assets/img/bg2.png',]
     }
+  },
+  methods: {
+    getImg(img) {
+      return new URL(img, import.meta.url).href
+    },
   }
 }
 </script>
@@ -22,14 +28,8 @@ export default {
     </nav>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="../assets/img/banner1.png">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="../assets/img/bg1.png">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="../assets/img/bg2.png">
+        <div class="carousel-item active" v-for="jumboSlide in jumboSlides">
+          <img class="d-block w-100" :src="getImg(jumboSlide)">
         </div>
       </div>
     </div>

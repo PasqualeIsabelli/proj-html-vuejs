@@ -4,6 +4,7 @@ import TheFooter from './components/TheFooter.vue';
 import ExperienceSection from './components/ExperienceSection.vue';
 import FeatureSection from './components/FeatureSection.vue';
 import StreamingSection from './components/StreamingSection.vue';
+import BattleSection from './components/BattleSection.vue';
 import GamesSection from './components/GamesSection.vue';
 import MatchSection from './components/MatchSection.vue';
 import TeamSection from './components/TeamSection.vue';
@@ -20,6 +21,7 @@ export default {
     ExperienceSection,
     FeatureSection,
     StreamingSection,
+    BattleSection,
     GamesSection,
     MatchSection,
     TeamSection,
@@ -44,6 +46,7 @@ export default {
     <ExperienceSection></ExperienceSection>
     <FeatureSection></FeatureSection>
     <StreamingSection></StreamingSection>
+    <BattleSection></BattleSection>
     <GamesSection></GamesSection>
     <MatchSection></MatchSection>
     <TeamSection></TeamSection>

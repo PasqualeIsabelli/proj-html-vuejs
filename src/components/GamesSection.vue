@@ -107,6 +107,9 @@ section {
 
         &:hover {
           background-color: $green-primary;
+          .btn-success {
+            background-color: #333287 !important;
+          }
         }
         .new {
           background-color: $green-primary;
@@ -117,7 +120,6 @@ section {
         .btn-success {
           --bs-btn-bg: #05cc7c !important;
           --bs-btn-border-color: #05cc7c !important;
-          --bs-btn-hover-bg: #333287 !important;
           --bs-btn-hover-border-color: #333287 !important;
           --bs-btn-color: #000000 !important;
           --bs-btn-hover-color: #05cc7c !important;

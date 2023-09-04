@@ -3,6 +3,61 @@ export default {
   data() {
     return {
       battleMenu: ['All', 'Pubg', 'COD', 'AC', 'MCX'],
+      battles: [
+        {
+          game: 'Assassin\'s Creed',
+          time: '10.45',
+          firstTeam: {
+            name: 'King Gaming',
+            image: '../assets/img/t1.png',
+            alt: 'king'
+          },
+          secondTeam: {
+            name: 'Astro Gaming',
+            image: '../assets/img/t2.png',
+            alt: 'astro'
+          }
+        }, {
+          game: 'PUBG Battleground',
+          time: '09.45',
+          firstTeam: {
+            name: 'Ninja Gaming',
+            image: '../assets/img/t3.png',
+            alt: 'ninja'
+          },
+          secondTeam: {
+            name: 'Witch Gaming',
+            image: '../assets/img/t4.png',
+            alt: 'witch'
+          }
+        }, {
+          game: 'Mortal Combat X',
+          time: '08.45',
+          firstTeam: {
+            name: 'Dgn Gaming',
+            image: '../assets/img/t5.png',
+            alt: 'dragon'
+          },
+          secondTeam: {
+            name: 'Joker Gaming',
+            image: '../assets/img/t6.png',
+            alt: 'joker'
+          }
+        }, {
+          game: 'Call of Duty',
+          time: '04.45',
+          firstTeam: {
+            name: 'Shark Gaming',
+            image: '../assets/img/t7.png',
+            alt: 'shark'
+          },
+          secondTeam: {
+            name: 'Krull Gaming',
+            image: '../assets/img/t8.png',
+            alt: 'krull'
+          }
+        }
+      ]
     }
   },
   methods: {
@@ -25,32 +80,31 @@ export default {
         </div>
         <div class="row my-5">
           <div class="col">
-            <ul class="d-flex justify-content-center gap-4 list-inline">
+            <ul class="d-flex justify-content-center list-inline">
               <li class="fw-bold" v-for="item in battleMenu"><a class="text-decoration-none fs-5" href="#0">{{ item }}</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="card-box d-flex flex-column gap-4">
-          <!--1-->
-          <div class="row battle rounded-4 pippo">
+        <div class="card-box d-flex flex-column mb-4" v-for="battle in battles">
+          <div class="row battle rounded-4">
             <div class="col-6">
               <div class="d-flex justify-content-between rounded-4 px-4 py-5">
                 <div class="card rounded-4">
-                  <img src="../assets/img/t1.png" class="card-img-top rounded-3 px-4 py-3" alt="king">
+                  <img :src="getImg(battle.firstTeam.image)" class="card-img-top rounded-3 px-4 py-3" :alt="battle.firstTeam.alt">
                   <div class="card-body">
                     <p class="text-green">Italy</p>
-                    <h5 class="text-white fw-bold fs-4">King Gaming</h5>
+                    <h5 class="text-white fw-bold fs-4">{{ battle.firstTeam.name }}</h5>
                   </div>
                 </div>
                 <div class="vs rounded-3">
                   <p class="text-green text-center fs-1 fw-bold">vs</p>
                 </div>
                 <div class="card">
-                  <img src="../assets/img/t2.png" class="card-img-top rounded-3 p-3" alt="astro">
+                  <img :src="getImg(battle.secondTeam.image)" class="card-img-top rounded-3 p-3" :alt="battle.secondTeam.alt">
                   <div class="card-body">
                     <p class="text-green">India</p>
-                    <h5 class="text-white fw-bold fs-4">Astro Gaming</h5>
+                    <h5 class="text-white fw-bold fs-4">{{ battle.secondTeam.name }}</h5>
                   </div>
                 </div>
               </div>
@@ -58,147 +112,12 @@ export default {
             <div class="col-6">
               <div class="d-flex justify-content-between rounded-4 ps-2 pe-4 py-5 gap-5">
                 <div class="text">
-                  <h2 class="text-white fw-bold">Assassin's Creed</h2>
+                  <h2 class="text-white fw-bold">{{ battle.game }}</h2>
                   <p class="text-white">Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget
                     consectetur sed, convallis at tellus. Vivamus magna justo.</p>
                 </div>
                 <div class="timing rounded-4 p-4">
-                  <h2 class="text-white text-center">09.45</h2>
-                  <p class="text-white text-center">1st November,2022</p>
-                  <div class="d-flex justify-content-center gap-2 pt-2">
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-brands fa-youtube"></i>
-                    </div>
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-solid fa-message"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--2-->
-          <div class="row battle rounded-4 pippo">
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 px-4 py-5">
-                <div class="card rounded-4">
-                  <img src="../assets/img/t3.png" class="card-img-top rounded-3 px-4 py-3" alt="ninja">
-                  <div class="card-body">
-                    <p class="text-green">Italy</p>
-                    <h5 class="text-white fw-bold fs-4">Ninja Gaming</h5>
-                  </div>
-                </div>
-                <div class="vs rounded-3">
-                  <p class="text-green text-center fs-1 fw-bold">vs</p>
-                </div>
-                <div class="card">
-                  <img src="../assets/img/t4.png" class="card-img-top rounded-3 p-3" alt="witch">
-                  <div class="card-body">
-                    <p class="text-green">India</p>
-                    <h5 class="text-white fw-bold fs-4">Witch Gaming</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 ps-2 pe-4 py-5 gap-5">
-                <div class="text">
-                  <h2 class="text-white fw-bold">PUBG Battelground</h2>
-                  <p class="text-white">Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget
-                    consectetur sed, convallis at tellus. Vivamus magna justo.</p>
-                </div>
-                <div class="timing rounded-4 p-4">
-                  <h2 class="text-white text-center">10.45</h2>
-                  <p class="text-white text-center">1st November,2022</p>
-                  <div class="d-flex justify-content-center gap-2 pt-2">
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-brands fa-youtube"></i>
-                    </div>
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-solid fa-message"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--3-->
-          <div class="row battle rounded-4 pippo">
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 px-4 py-5">
-                <div class="card rounded-4">
-                  <img src="../assets/img/t5.png" class="card-img-top rounded-3 px-4 py-3" alt="dragon">
-                  <div class="card-body">
-                    <p class="text-green">Italy</p>
-                    <h5 class="text-white fw-bold fs-4">Dgn Gaming</h5>
-                  </div>
-                </div>
-                <div class="vs rounded-3">
-                  <p class="text-green text-center fs-1 fw-bold">vs</p>
-                </div>
-                <div class="card">
-                  <img src="../assets/img/t6.png" class="card-img-top rounded-3 p-3" alt="joker">
-                  <div class="card-body">
-                    <p class="text-green">India</p>
-                    <h5 class="text-white fw-bold fs-4">Joker Gaming</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 ps-2 pe-4 py-5 gap-5">
-                <div class="text">
-                  <h2 class="text-white fw-bold">Mortal Combat X</h2>
-                  <p class="text-white">Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget
-                    consectetur sed, convallis at tellus. Vivamus magna justo.</p>
-                </div>
-                <div class="timing rounded-4 p-4">
-                  <h2 class="text-white text-center">08.45</h2>
-                  <p class="text-white text-center">1st November,2022</p>
-                  <div class="d-flex justify-content-center gap-2 pt-2">
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-brands fa-youtube"></i>
-                    </div>
-                    <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
-                      <i class="fa-solid fa-message"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--4-->
-          <div class="row battle rounded-4 pippo">
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 px-4 py-5">
-                <div class="card rounded-4">
-                  <img src="../assets/img/t7.png" class="card-img-top rounded-3 px-4 py-3" alt="shark">
-                  <div class="card-body">
-                    <p class="text-green">Italy</p>
-                    <h5 class="text-white fw-bold fs-4">Shark Gaming</h5>
-                  </div>
-                </div>
-                <div class="vs rounded-3">
-                  <p class="text-green text-center fs-1 fw-bold">vs</p>
-                </div>
-                <div class="card">
-                  <img src="../assets/img/t8.png" class="card-img-top rounded-3 p-3" alt="krull">
-                  <div class="card-body">
-                    <p class="text-green">India</p>
-                    <h5 class="text-white fw-bold fs-4">Krull Gaming</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="d-flex justify-content-between rounded-4 ps-2 pe-4 py-5 gap-5">
-                <div class="text">
-                  <h2 class="text-white fw-bold">Call Of Duty</h2>
-                  <p class="text-white">Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget
-                    consectetur sed, convallis at tellus. Vivamus magna justo.</p>
-                </div>
-                <div class="timing rounded-4 p-4">
-                  <h2 class="text-white text-center">04.45</h2>
+                  <h2 class="text-white text-center">{{ battle.time }}</h2>
                   <p class="text-white text-center">1st November,2022</p>
                   <div class="d-flex justify-content-center gap-2 pt-2">
                     <div style="height: 45px; width: 45px;" class="icon rounded-circle text-center">
